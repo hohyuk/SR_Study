@@ -20,5 +20,13 @@
     <ClInclude Include="..\Code\GraphicDev.h">
       <Filter>00.GraphicDev</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Header\Export_System.h">
+      <Filter>99.Export</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Header\Export_System.inl">
+      <Filter>99.Export</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -17,10 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.System", "00.System", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Header", "03.Header", "{E48B9169-60A5-4E29-B985-ADACB25612EC}"
 	ProjectSection(SolutionItems) = preProject
+		Engine\Header\Engin_Typedef.h = Engine\Header\Engin_Typedef.h
 		Engine\Header\Engine_Define.h = Engine\Header\Engine_Define.h
 		Engine\Header\Engine_Enum.h = Engine\Header\Engine_Enum.h
 		Engine\Header\Engine_Function.h = Engine\Header\Engine_Function.h
 		Engine\Header\Engine_Macro.h = Engine\Header\Engine_Macro.h
+		Engine\Header\Engine_Struct.h = Engine\Header\Engine_Struct.h
+		Engine\Header\Export_Function.h = Engine\Header\Export_Function.h
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "System", "Engine\System\Default\System.vcxproj", "{824DF8CA-C719-47A7-917A-6A7C2CC376F8}"

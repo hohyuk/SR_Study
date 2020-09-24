@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "Client.h"
 #include "MainApp.h"
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -44,6 +45,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	msg.message = WM_NULL;
 
 	MainApp*	pMainApp = MainApp::Create();
+	
 	if (nullptr == pMainApp)
 		return FALSE;
 

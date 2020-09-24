@@ -1,6 +1,8 @@
 #pragma once
 #include "Define.h"
 #include "Base.h"
+#include "GraphicDev.h"
+#include "Export_Function.h"
 
 BEGIN(Client)
 
@@ -19,6 +21,9 @@ public:
 public:
 	static MainApp*		Create(void);
 	virtual void		Free(void);
+
+private:
+	Engine::GraphicDev* m_Dev{ nullptr };
 };
 
 END

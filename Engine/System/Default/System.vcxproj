@@ -22,14 +22,18 @@
     <ClCompile Include="..\Code\GraphicDev.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Header\Export_System.h" />
     <ClInclude Include="..\Code\GraphicDev.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Header\Export_System.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{824DF8CA-C719-47A7-917A-6A7C2CC376F8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>System</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -101,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;SYSTEM_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)ENGINE_EXPORTS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../Code;../../Header;$(SolutionDir)Base../Code;../../Header;../../../Base;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Code;../../Header;$(SolutionDir)Base;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -135,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;SYSTEM_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)ENGINE_EXPORTS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../Code;../../Header;$(SolutionDir)Base../Code;../../Header;../../../Base;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Code;../../Header;$(SolutionDir)Base;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
