@@ -10,10 +10,22 @@
     <Filter Include="99.Export">
       <UniqueIdentifier>{3b55198e-f873-4c70-bc2e-13e585bae311}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Frame">
+      <UniqueIdentifier>{db6d273f-9b85-47cf-abd0-48ce5a66d058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Timer\Manager">
+      <UniqueIdentifier>{79e7c3d7-525b-4990-ad63-d5cfe113e1b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\GraphicDev.cpp">
       <Filter>00.GraphicDev</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Timer.cpp">
+      <Filter>01.Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\TimerMgr.cpp">
+      <Filter>01.Timer\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -22,6 +34,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Header\Export_System.h">
       <Filter>99.Export</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Timer.h">
+      <Filter>01.Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\TimerMgr.h">
+      <Filter>01.Timer\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

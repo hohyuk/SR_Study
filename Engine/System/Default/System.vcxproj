@@ -20,10 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\GraphicDev.cpp" />
+    <ClCompile Include="..\Code\Timer.cpp" />
+    <ClCompile Include="..\Code\TimerMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Header\Export_System.h" />
     <ClInclude Include="..\Code\GraphicDev.h" />
+    <ClInclude Include="..\Code\Timer.h" />
+    <ClInclude Include="..\Code\TimerMgr.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Header\Export_System.inl" />
