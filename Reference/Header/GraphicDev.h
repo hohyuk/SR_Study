@@ -14,6 +14,8 @@ private:
 	virtual ~GraphicDev();
 
 public:
+	LPDIRECT3DDEVICE9		Get_GraphicDev() const { return m_pGraphicDev; }
+public:
 	HRESULT  Ready_GraphicDev(HWND hWnd, WINMODE eMode,
 		const _uint& iSizeX, const _uint& iSizeY, GraphicDev** ppGraphicDev);
 	void Render_Begin(D3DXCOLOR Color);

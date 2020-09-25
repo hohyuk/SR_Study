@@ -15,7 +15,13 @@ MainApp::~MainApp(void)
 
 HRESULT MainApp::Ready_MainApp(void)
 {
-	Engine::Ready_GraphicDev(g_hWnd, Engine::WINMODE::MODE_WIN, WINCX, WINCY, &m_Dev);
+	FAILED_CHECK_RETURN(Engine::Ready_GraphicDev(g_hWnd, Engine::MODE_WIN, WINCX, WINCY, &m_pDeviceClass), E_FAIL);
+	m_pDeviceClass->AddRef();
+	
+	m_pGraphicDev = m_pDeviceClass->Get_GraphicDev();
+	m_pGraphicDev->AddRef();
+
+	Client::Safe_Release(m_pDeviceClass);
 	return S_OK;
 }
 
@@ -46,6 +52,8 @@ MainApp* MainApp::Create(void)
 
 void MainApp::Free(void)
 {
+	Client::Safe_Release(m_pGraphicDev);
 
+	Engine::Release_System();
 }
 
