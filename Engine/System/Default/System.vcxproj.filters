@@ -16,6 +16,9 @@
     <Filter Include="01.Timer\Manager">
       <UniqueIdentifier>{79e7c3d7-525b-4990-ad63-d5cfe113e1b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Frame\Manager">
+      <UniqueIdentifier>{ff0649cd-d6ed-47a5-affe-9341a382e3d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\GraphicDev.cpp">
@@ -26,6 +29,12 @@
     </ClCompile>
     <ClCompile Include="..\Code\TimerMgr.cpp">
       <Filter>01.Timer\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Frame.cpp">
+      <Filter>02.Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\FrameMgr.cpp">
+      <Filter>02.Frame\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +49,12 @@
     </ClInclude>
     <ClInclude Include="..\Code\TimerMgr.h">
       <Filter>01.Timer\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Frame.h">
+      <Filter>02.Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\FrameMgr.h">
+      <Filter>02.Frame\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

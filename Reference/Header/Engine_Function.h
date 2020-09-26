@@ -104,7 +104,7 @@ namespace Engine
 			dwRefCnt = Pair.second->Release();
 
 			if (0 == dwRefCnt)
-				Pair.second = NULL;
+				Pair.second = nullptr;
 		}
 	};
 }

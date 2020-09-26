@@ -44,6 +44,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MSG msg;
 	msg.message = WM_NULL;
 
+	// Timer 설치
+	FAILED_CHECK_RETURN(Engine::Ready_Timer(L"Timer_Immediate"), E_FAIL);
+	FAILED_CHECK_RETURN(Engine::Ready_Timer(L"Timer_FPS60"), E_FAIL);
+
+
+	// Frame 설치
+	FAILED_CHECK_RETURN(Engine::Ready_Frame(L"Frame_FPS60",60.f), E_FAIL);
+
 	MainApp*	pMainApp = MainApp::Create();
 	
 	if (nullptr == pMainApp)
@@ -66,8 +74,18 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		}
 		else
 		{
-			pMainApp->Update_MainApp(0.f);
-			pMainApp->Render_MainApp();
+			Engine::Set_TimeDelta(L"Timer_Immediate");
+
+			_float fTimeDelta = Engine::Get_TimeDelta(L"Timer_Immediate");
+
+			if (Engine::IsPermit_Call(L"Frame_FPS60", fTimeDelta))
+			{
+				Engine::Set_TimeDelta(L"Timer_FPS60");
+				_float fTime60 = Engine::Get_TimeDelta(L"Timer_FPS60");
+				pMainApp->Update_MainApp(0.f);
+				pMainApp->Render_MainApp();
+			}
+			
 		}
 	}
 	_ulong dwRefCnt = 0;

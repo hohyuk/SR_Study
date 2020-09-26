@@ -23,7 +23,6 @@ public:
 	virtual void		Free(void);
 
 private:
-	Engine::GraphicDev*		m_pDeviceClass{ nullptr };
 	LPDIRECT3DDEVICE9		m_pGraphicDev{ nullptr };
 };
 

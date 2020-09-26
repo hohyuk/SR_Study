@@ -35,7 +35,9 @@ void Timer::SetUp_TimeDelta()
 		m_FixTime = m_FrameTime;
 	}
 
-	m_fTimeDelta = (_float(m_FrameTime.QuadPart) - _float(m_LastTime.QuadPart));
+	m_fTimeDelta = (_float(m_FrameTime.QuadPart) - _float(m_LastTime.QuadPart)) / (_float)m_CpuTick.QuadPart;
+
+	m_LastTime = m_FrameTime;
 }
 
 Timer * Timer::Create()

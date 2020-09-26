@@ -15,13 +15,15 @@ MainApp::~MainApp(void)
 
 HRESULT MainApp::Ready_MainApp(void)
 {
-	FAILED_CHECK_RETURN(Engine::Ready_GraphicDev(g_hWnd, Engine::MODE_WIN, WINCX, WINCY, &m_pDeviceClass), E_FAIL);
-	m_pDeviceClass->AddRef();
+	Engine::GraphicDev*		pDeviceClass{ nullptr };
+
+	FAILED_CHECK_RETURN(Engine::Ready_GraphicDev(g_hWnd, Engine::MODE_WIN, WINCX, WINCY, &pDeviceClass), E_FAIL);
+	pDeviceClass->AddRef();
 	
-	m_pGraphicDev = m_pDeviceClass->Get_GraphicDev();
+	m_pGraphicDev = pDeviceClass->Get_GraphicDev();
 	m_pGraphicDev->AddRef();
 
-	Client::Safe_Release(m_pDeviceClass);
+	Client::Safe_Release(pDeviceClass);
 	return S_OK;
 }
 

@@ -19,12 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Code\Frame.cpp" />
+    <ClCompile Include="..\Code\FrameMgr.cpp" />
     <ClCompile Include="..\Code\GraphicDev.cpp" />
     <ClCompile Include="..\Code\Timer.cpp" />
     <ClCompile Include="..\Code\TimerMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Header\Export_System.h" />
+    <ClInclude Include="..\Code\Frame.h" />
+    <ClInclude Include="..\Code\FrameMgr.h" />
     <ClInclude Include="..\Code\GraphicDev.h" />
     <ClInclude Include="..\Code\Timer.h" />
     <ClInclude Include="..\Code\TimerMgr.h" />
