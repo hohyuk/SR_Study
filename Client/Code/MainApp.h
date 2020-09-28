@@ -24,6 +24,11 @@ public:
 
 private:
 	LPDIRECT3DDEVICE9		m_pGraphicDev{ nullptr };
+
+	_matrix matWorld;
+	_matrix matProj;
+	LPDIRECT3DVERTEXBUFFER9 m_pTriangle{ nullptr };
+	Engine::VTXCOL m_vtColor;
 };
 
 END
