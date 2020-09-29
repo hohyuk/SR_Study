@@ -8,10 +8,6 @@ namespace Engine
 		_vec3			vPos;
 		_ulong			dwColor;
 
-		tagVertexColor() {}
-		tagVertexColor(const _vec3& v, const _ulong& color)
-			: vPos{ v }, dwColor{ color }
-		{}
 	}VTXCOL;
 
 	const _ulong		FVF_COL = D3DFVF_XYZ | D3DFVF_DIFFUSE;

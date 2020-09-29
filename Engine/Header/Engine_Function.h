@@ -3,6 +3,16 @@
 namespace Engine
 {
 	template <typename T>
+	DWORD Safe_AddRef(T& pointer)
+	{
+		DWORD	dwRefCnt = 0;
+		if (NULL != pointer)
+			dwRefCnt = pointer->AddRef();
+
+		return dwRefCnt;
+	}
+
+	template <typename T>
 	DWORD Safe_Release(T& pointer)
 	{
 		DWORD	dwRefCnt = 0;
