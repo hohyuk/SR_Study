@@ -22,6 +22,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="99.Etc\01.Key">
+      <UniqueIdentifier>{42181851-bb5e-4481-b3ec-5823ab3885d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -51,6 +54,9 @@
     <ClInclude Include="..\Code\MainApp.h">
       <Filter>00.MainApp</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\KeyManager.h">
+      <Filter>99.Etc\01.Key</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -58,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\MainApp.cpp">
       <Filter>00.MainApp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\KeyManager.cpp">
+      <Filter>99.Etc\01.Key</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

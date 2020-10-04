@@ -18,7 +18,7 @@ TriCol::~TriCol(void)
 
 HRESULT TriCol::Ready_Buffer(void)
 {
-	FAILED_CHECK_RETURN(CVIBuffer::Ready_Buffer(), E_FAIL);
+	FAILED_CHECK_RETURN(VIBuffer::Ready_Buffer(), E_FAIL);
 
 	return S_OK;
 }

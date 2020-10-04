@@ -4,7 +4,8 @@
 #include "Base.h"
 
 #include "TriCol.h"
-
+#include "RcCol.h"
+#include "Cube.h"
 BEGIN(Engine)
 
 class ENGINE_DLL ResourcesMgr : public CBase

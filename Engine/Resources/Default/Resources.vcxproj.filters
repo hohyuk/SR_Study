@@ -16,6 +16,12 @@
     <Filter Include="00.Resources\00.VIBuffer\00.TriCol">
       <UniqueIdentifier>{1ae841ad-56d2-4b6a-a9e3-fec0d65fcf3d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="00.Resources\00.VIBuffer\01.RcCol">
+      <UniqueIdentifier>{a933725d-eae8-439a-beaf-56a9486546d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00.Resources\00.VIBuffer\02.Cube">
+      <UniqueIdentifier>{35332deb-e6f6-4a80-8eef-f99e9ef46775}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\Resources.cpp">
@@ -29,6 +35,12 @@
     </ClCompile>
     <ClCompile Include="..\Code\TriCol.cpp">
       <Filter>00.Resources\00.VIBuffer\00.TriCol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\RcCol.cpp">
+      <Filter>00.Resources\00.VIBuffer\01.RcCol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Cube.cpp">
+      <Filter>00.Resources\00.VIBuffer\02.Cube</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +58,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Header\Export_Resouces.h">
       <Filter>99.Export</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\RcCol.h">
+      <Filter>00.Resources\00.VIBuffer\01.RcCol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Cube.h">
+      <Filter>00.Resources\00.VIBuffer\02.Cube</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
