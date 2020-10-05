@@ -20,6 +20,11 @@ protected:
 	LPDIRECT3DVERTEXBUFFER9		m_pVB;
 	LPDIRECT3DINDEXBUFFER9		m_pIB;
 
+	_ulong						m_dwVtxCnt;
+	_ulong						m_dwTriCnt;
+	_ulong						m_dwVtxSize;
+	_ulong						m_dwFVF;
+
 public:
 };
 

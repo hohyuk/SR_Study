@@ -49,10 +49,33 @@ HRESULT ResourcesMgr::Ready_Buffer(LPDIRECT3DDEVICE9 pGraphicDev, const _ushort 
 	case BUFFER_CUBETEX:
 		pResources = Cube::Create(pGraphicDev);
 		break;
+	case BUFFER_RCTEX:
+		pResources = CRcTex::Create(pGraphicDev);
+		break;
 	}
 	NULL_CHECK_RETURN(pResources, E_FAIL);
 
 	m_pmapResource[wContainerIdx].emplace(pBufferTag, pResources);
+
+	return S_OK;
+}
+
+HRESULT ResourcesMgr::Ready_Texture(LPDIRECT3DDEVICE9 pGraphicDev, const _ushort & wContainerIdx, const _tchar * pTextureTag, TEXTURETYPE eType, const _tchar * pFilePath, const _uint & iCnt)
+{
+	if (nullptr == m_pmapResource)
+	{
+		MSG_BOX("Resource Container not Reserved");
+		return E_FAIL;
+	}
+
+	Resources*		pResources = Find_Resources(wContainerIdx, pTextureTag);
+	if (nullptr != pResources)
+		return E_FAIL;
+
+	pResources = CTexture::Create(pGraphicDev, pFilePath, eType, iCnt);
+	NULL_CHECK_RETURN(pResources, E_FAIL);
+
+	m_pmapResource[wContainerIdx].emplace(pTextureTag, pResources);
 
 	return S_OK;
 }
@@ -65,6 +88,16 @@ void ResourcesMgr::Render_Buffer(const _ushort & wContainerIdx, const _tchar * p
 		return;
 
 	dynamic_cast<VIBuffer*>(pResources)->Render_Buffer();
+}
+
+void ResourcesMgr::Render_Texture(const _ushort & wContainerIdx, const _tchar * pTextureTag, const _uint & iIndex)
+{
+	Resources*		pResources = Find_Resources(wContainerIdx, pTextureTag);
+
+	if (nullptr == pResources)
+		return;
+
+	dynamic_cast<CTexture*>(pResources)->Render_Texture(iIndex);
 }
 
 Resources * ResourcesMgr::Find_Resources(const _ushort & wContainerIdx, const _tchar * pResourcesTag)

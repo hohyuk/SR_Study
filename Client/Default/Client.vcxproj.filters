@@ -25,6 +25,9 @@
     <Filter Include="99.Etc\01.Key">
       <UniqueIdentifier>{42181851-bb5e-4481-b3ec-5823ab3885d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.Camera">
+      <UniqueIdentifier>{3bff40cd-248b-456a-a975-8c2e3ca69d67}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -57,6 +60,9 @@
     <ClInclude Include="..\Code\KeyManager.h">
       <Filter>99.Etc\01.Key</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\Camera.h">
+      <Filter>01.Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -67,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\KeyManager.cpp">
       <Filter>99.Etc\01.Key</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Camera.cpp">
+      <Filter>01.Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

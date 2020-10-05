@@ -165,6 +165,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Code\Camera.h" />
     <ClInclude Include="..\Code\KeyManager.h" />
     <ClInclude Include="..\Code\MainApp.h" />
     <ClInclude Include="..\Header\Define.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Code\Camera.cpp" />
     <ClCompile Include="..\Code\KeyManager.cpp" />
     <ClCompile Include="..\Code\MainApp.cpp" />
     <ClCompile Include="Client.cpp" />

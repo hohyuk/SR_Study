@@ -22,6 +22,12 @@
     <Filter Include="00.Resources\00.VIBuffer\02.Cube">
       <UniqueIdentifier>{35332deb-e6f6-4a80-8eef-f99e9ef46775}</UniqueIdentifier>
     </Filter>
+    <Filter Include="00.Resources\01.Texture">
+      <UniqueIdentifier>{cc014a4b-5206-4a9a-a583-9c105e89b70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00.Resources\00.VIBuffer\03.RcTex">
+      <UniqueIdentifier>{b4525852-341b-4353-adc0-d71f60880611}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\Resources.cpp">
@@ -41,6 +47,12 @@
     </ClCompile>
     <ClCompile Include="..\Code\Cube.cpp">
       <Filter>00.Resources\00.VIBuffer\02.Cube</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Texture.cpp">
+      <Filter>00.Resources\01.Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\RcTex.cpp">
+      <Filter>00.Resources\00.VIBuffer\03.RcTex</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="..\Code\Cube.h">
       <Filter>00.Resources\00.VIBuffer\02.Cube</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Texture.h">
+      <Filter>00.Resources\01.Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\RcTex.h">
+      <Filter>00.Resources\00.VIBuffer\03.RcTex</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

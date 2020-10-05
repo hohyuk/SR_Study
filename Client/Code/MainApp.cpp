@@ -36,7 +36,10 @@ HRESULT MainApp::Ready_MainApp(void)
 
 	{
 		FAILED_CHECK_RETURN(Engine::Reserve_ContainerSize(Engine::RESOURCE_END), E_FAIL);
-		FAILED_CHECK_RETURN(Engine::Ready_Buffer(m_pGraphicDev, Engine::RESOURCE_STATIC, L"Buffer_CubeCol", Engine::BUFFER_CUBETEX), E_FAIL);
+		//FAILED_CHECK_RETURN(Engine::Ready_Buffer(m_pGraphicDev, Engine::RESOURCE_STATIC, L"Buffer_CubeCol", Engine::BUFFER_CUBETEX), E_FAIL);
+		FAILED_CHECK_RETURN(Engine::Ready_Buffer(m_pGraphicDev, Engine::RESOURCE_STATIC, L"Buffer_RcTex", Engine::BUFFER_RCTEX), E_FAIL);
+		FAILED_CHECK_RETURN(Engine::Ready_Texture(m_pGraphicDev, Engine::RESOURCE_STATIC, L"Texture_Logo", Engine::TEX_NORMAL, L"../Bin/Resource/Texture/Logo/Logo.jpg"), E_FAIL);
+
 	}
 	Client::Safe_Release(pDeviceClass);
 
@@ -74,7 +77,11 @@ _int MainApp::Update_MainApp(const _float& fTimeDelta)
 		if (KeyManager::GetInstance()->Pressing('X'))
 			m_Pos.z -= fTimeDelta;
 	}
-
+	// 회전
+	{
+		if (KeyManager::GetInstance()->Pressing('C'))
+			m_fYRot += 5.f;
+	}
 	// 카메라의 위치 방향 조정
 	_vec3 target(0.f, 0.f, 1.f);
 	_vec3 up(0.f, 1.f, 0.f);
@@ -89,9 +96,10 @@ _int MainApp::Update_MainApp(const _float& fTimeDelta)
 
 
 	// 월드 행렬
-	D3DXMATRIX matTrans;
+	D3DXMATRIX matTrans, matRotY;
+	D3DXMatrixRotationY(&matRotY, D3DXToRadian(m_fYRot));
 	D3DXMatrixTranslation(&matTrans, m_Pos.x, m_Pos.y, m_Pos.z);
-	D3DXMATRIX world = matTrans;
+	D3DXMATRIX world = matRotY * matTrans;
 
 	
 	m_pGraphicDev->SetTransform(D3DTS_WORLD, &world);
@@ -102,7 +110,9 @@ void MainApp::Render_MainApp(void)
 {
 	Engine::Render_Begin(D3DXCOLOR(0.f, 0.f, 1.f, 1.f));
 	m_pGraphicDev->SetRenderState(D3DRS_LIGHTING, FALSE);
-	Engine::Render_Buffer(Engine::RESOURCE_STATIC, L"Buffer_CubeCol");
+	Engine::Render_Texture(Engine::RESOURCE_STATIC, L"Texture_Logo", 0);
+	Engine::Render_Buffer(Engine::RESOURCE_STATIC, L"Buffer_RcTex");
+
 	Engine::Render_End();
 }
 

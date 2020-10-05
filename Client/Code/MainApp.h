@@ -29,6 +29,7 @@ private:
 private:
 	_vec3 CameraPos;
 	_vec3 m_Pos;
+	float m_fYRot{};
 };
 
 END
