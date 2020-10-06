@@ -5,6 +5,9 @@
 
 USING(Engine)
 
+class Player;
+class Monster;
+
 class LogoScene : public Scene
 {
 private:
@@ -24,7 +27,6 @@ private:
 	HRESULT		Ready_Resource(Engine::RESOURCETYPE eType);
 
 private:
-	_vec3 CameraPos{ 0.f,0.f,-3.f };
-	_vec3 m_Pos{ 0.f,0.f,0.f };
-	float m_fYRot{ 0.f };
+	Player* m_pPlayer{ nullptr };
+	Monster* m_pMonster{ nullptr };
 };

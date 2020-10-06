@@ -117,4 +117,19 @@ namespace Engine
 				Pair.second = nullptr;
 		}
 	};
+
+
+
+	inline void Distance_Dir(D3DXVECTOR3& rDir, const D3DXVECTOR3& rDst, const D3DXVECTOR3& rSrc)
+	{
+		rDir = rDst - rSrc;
+		D3DXVec3Normalize(&rDir, &rDir);
+	}
+
+	inline float Distance_Pos(const D3DXVECTOR3& rDst, const D3DXVECTOR3& rSrc)
+	{
+		D3DXVECTOR3 vDist = rDst - rSrc;
+
+		return sqrtf(vDist.x * vDist.x + vDist.y * vDist.y);
+	}
 }

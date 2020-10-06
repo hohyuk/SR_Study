@@ -21,7 +21,7 @@ namespace Engine
 #endif // ENGINE_EXPORTS
 
 #define NULL_CHECK( _ptr)	\
-	{if( _ptr == 0){__asm { int 3 };return;}}
+	{if( _ptr == 0){__debugbreak()return;}}
 
 #define NULL_CHECK_RETURN( _ptr, _return)	\
 	{if( _ptr == 0){__asm { int 3 };return _return;}}
