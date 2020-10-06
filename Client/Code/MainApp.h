@@ -24,12 +24,6 @@ public:
 
 private:
 	LPDIRECT3DDEVICE9		m_pGraphicDev{ nullptr };
-
-	// Test
-private:
-	_vec3 CameraPos;
-	_vec3 m_Pos;
-	float m_fYRot{};
 };
 
 END

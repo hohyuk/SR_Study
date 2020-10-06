@@ -28,6 +28,15 @@
     <Filter Include="01.Camera">
       <UniqueIdentifier>{3bff40cd-248b-456a-a975-8c2e3ca69d67}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.Scene">
+      <UniqueIdentifier>{edb0d4a1-2106-427e-ad3c-0d58d9a86759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Scene\01.Logo">
+      <UniqueIdentifier>{564669fe-d8d6-496b-9652-f5c9f31ff20c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Scene\02.Stage">
+      <UniqueIdentifier>{b1c635ff-2064-419a-b71d-be5d5bd1e22b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -63,6 +72,12 @@
     <ClInclude Include="..\Code\Camera.h">
       <Filter>01.Camera</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\LogoScene.h">
+      <Filter>01.Scene\01.Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\StageScene.h">
+      <Filter>01.Scene\02.Stage</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -76,6 +91,12 @@
     </ClCompile>
     <ClCompile Include="..\Code\Camera.cpp">
       <Filter>01.Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\LogoScene.cpp">
+      <Filter>01.Scene\01.Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\StageScene.cpp">
+      <Filter>01.Scene\02.Stage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

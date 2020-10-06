@@ -5,7 +5,7 @@
 
 BEGIN(Engine)
 
-class Component : public CBase
+class ENGINE_DLL Component : public CBase
 {
 	DECLARE_SINGLETON(Component)
 
