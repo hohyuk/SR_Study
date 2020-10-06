@@ -2,10 +2,11 @@
 
 #include "Engine_Define.h"
 #include "Base.h"
+#include "Component.h"
 
 BEGIN(Engine)
 
-class ENGINE_DLL Resources : public CBase
+class ENGINE_DLL Resources : public Component
 {
 protected:
 	explicit	 Resources(LPDIRECT3DDEVICE9 pGraphicDev);

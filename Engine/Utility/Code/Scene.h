@@ -1,16 +1,16 @@
 #pragma once
-#include "Engine_Define.h"
-#include "Base.h"
+
+#include "Layer.h"
+
 BEGIN(Engine)
 
+class Layer;
 class ENGINE_DLL Scene : public CBase
 {
 protected:
-	explicit Scene();
 	explicit Scene(LPDIRECT3DDEVICE9 pGraphicDev);
 	virtual ~Scene();
 public:
-	static Scene*	Create(LPDIRECT3DDEVICE9 pGraphicDev);
 	virtual void Free(void);
 
 public:
@@ -20,6 +20,7 @@ public:
 
 protected:
 	LPDIRECT3DDEVICE9			m_pGraphicDev;
+	map<const _tchar*, Layer*>		m_mapLayer;
 };
 
 END

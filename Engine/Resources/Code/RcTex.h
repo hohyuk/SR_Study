@@ -17,6 +17,7 @@ public:
 
 public:
 	static CRcTex*	Create(LPDIRECT3DDEVICE9 pGraphicDev);
+	virtual Component*	Clone(void);
 	virtual void Free(void);
 };
 END

@@ -8,7 +8,6 @@ USING(Engine)
 class StageScene : public Scene
 {
 protected:
-	explicit StageScene();
 	explicit StageScene(LPDIRECT3DDEVICE9 pGraphicDev);
 	virtual ~StageScene();
 public:

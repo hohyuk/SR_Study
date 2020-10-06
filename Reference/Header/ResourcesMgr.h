@@ -4,8 +4,6 @@
 #include "Base.h"
 
 #include "TriCol.h"
-#include "RcCol.h"
-#include "Cube.h"
 #include "RcTex.h"
 #include "Texture.h"
 

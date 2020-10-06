@@ -33,6 +33,11 @@ TriCol * TriCol::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 	return pInstance;
 }
 
+Component * TriCol::Clone(void)
+{
+	return new TriCol(*this);
+}
+
 void TriCol::Free(void)
 {
 	VIBuffer::Free();

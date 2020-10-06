@@ -7,18 +7,18 @@ BEGIN(Engine)
 
 class ENGINE_DLL Component : public CBase
 {
-	DECLARE_SINGLETON(Component)
-
-private:
+	
+protected:
 	explicit Component();
+	explicit Component(const Component& rhs);
 	virtual ~Component();
-public:
-	virtual void Free(void);
 
 public:
-	virtual HRESULT		Ready_Component();
 	virtual _int		Update_Component(const _float& fTimeDelta);
-	virtual void		Render_Component();
+
+protected:
+	virtual Component*		Clone(void) = 0;
+	virtual void			Free(void) = 0;
 };
 
 END

@@ -1,22 +1,28 @@
 USING(Engine)
-
-HRESULT		Ready_Management(LPDIRECT3DDEVICE9 pGraphicDev, const _tchar* pSceneTag, Scene* pScene)
+HRESULT Create_Management(Management** ppManagement)
 {
-	return Management::GetInstance()->Ready_Management(pGraphicDev, pSceneTag, pScene);
+	Management*		pManagement = Management::GetInstance();
+	NULL_CHECK_RETURN(pManagement, E_FAIL);
+
+	*ppManagement = pManagement;
+
+	return S_OK;
 }
 
-_int		Update_Management(const _float& fTimeDelta)
+HRESULT	SetUp_Scene(Scene* pScene)
 {
-	return Management::GetInstance()->Update_Management(fTimeDelta);
+	return Management::GetInstance()->SetUp_Scene(pScene);
+}
+_int	Update_Scene(const _float& fTimeDelta)
+{
+	return Management::GetInstance()->Update_Scene(fTimeDelta);
+}
+void	Render_Scene(void)
+{
+	return Management::GetInstance()->Render_Scene();
 }
 
-void		Render_Management()
-{
-	Management::GetInstance()->Render_Management();
-}
-
-// Release Management
-void Release_Management()
+void Release_Utility(void)
 {
 	Management::GetInstance()->DestroyInstance();
 }

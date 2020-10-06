@@ -7,10 +7,10 @@ USING(Engine)
 
 class LogoScene : public Scene
 {
-protected:
-	explicit LogoScene();
+private:
 	explicit LogoScene(LPDIRECT3DDEVICE9 pGraphicDev);
-	virtual ~LogoScene();
+	virtual ~LogoScene(void);
+
 public:
 	static LogoScene*	Create(LPDIRECT3DDEVICE9 pGraphicDev);
 	virtual void Free(void);
@@ -20,9 +20,11 @@ public:
 	virtual _int		Update_Scene(const _float& fTimeDelta);
 	virtual void		Render_Scene();
 
-	// Test
 private:
-	_vec3 CameraPos;
-	_vec3 m_Pos;
-	float m_fYRot{};
+	HRESULT		Ready_Resource(Engine::RESOURCETYPE eType);
+
+private:
+	_vec3 CameraPos{ 0.f,0.f,-3.f };
+	_vec3 m_Pos{ 0.f,0.f,0.f };
+	float m_fYRot{ 0.f };
 };

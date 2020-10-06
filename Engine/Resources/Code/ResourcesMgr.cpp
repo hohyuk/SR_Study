@@ -43,12 +43,6 @@ HRESULT ResourcesMgr::Ready_Buffer(LPDIRECT3DDEVICE9 pGraphicDev, const _ushort 
 	case BUFFER_TRICOL:
 		pResources = TriCol::Create(pGraphicDev);
 		break;
-	case BUFFER_RCCOL:
-		pResources = RcCol::Create(pGraphicDev);
-		break;
-	case BUFFER_CUBETEX:
-		pResources = Cube::Create(pGraphicDev);
-		break;
 	case BUFFER_RCTEX:
 		pResources = CRcTex::Create(pGraphicDev);
 		break;

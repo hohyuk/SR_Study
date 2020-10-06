@@ -37,6 +37,21 @@
     <Filter Include="01.Scene\02.Stage">
       <UniqueIdentifier>{b1c635ff-2064-419a-b71d-be5d5bd1e22b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.Layer">
+      <UniqueIdentifier>{81fd478b-0e7c-4b61-8df9-e619d6f45f15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Layer\01.LogoLayer">
+      <UniqueIdentifier>{ab3a2803-0703-463f-bb93-a11387f625df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.GameObject">
+      <UniqueIdentifier>{525c5f25-019c-4279-ae53-5994f3a7b71b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.GameObject\Player">
+      <UniqueIdentifier>{5db33440-8196-419c-bb7e-d6252c547906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.GameObject\Monster">
+      <UniqueIdentifier>{0ae4d9e5-ae76-4437-b998-054e25bb9edd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -78,6 +93,12 @@
     <ClInclude Include="..\Code\StageScene.h">
       <Filter>01.Scene\02.Stage</Filter>
     </ClInclude>
+    <ClInclude Include="..\Code\Player.h">
+      <Filter>03.GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Monster.h">
+      <Filter>03.GameObject\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -97,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="..\Code\StageScene.cpp">
       <Filter>01.Scene\02.Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Player.cpp">
+      <Filter>03.GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\Monster.cpp">
+      <Filter>03.GameObject\Monster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

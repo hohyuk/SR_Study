@@ -175,6 +175,8 @@
     </ClInclude>
     <ClInclude Include="..\Code\LogoScene.h" />
     <ClInclude Include="..\Code\MainApp.h" />
+    <ClInclude Include="..\Code\Monster.h" />
+    <ClInclude Include="..\Code\Player.h" />
     <ClInclude Include="..\Code\StageScene.h" />
     <ClInclude Include="..\Header\Define.h" />
     <ClInclude Include="..\Header\Function.h" />
@@ -198,6 +200,8 @@
     </ClCompile>
     <ClCompile Include="..\Code\LogoScene.cpp" />
     <ClCompile Include="..\Code\MainApp.cpp" />
+    <ClCompile Include="..\Code\Monster.cpp" />
+    <ClCompile Include="..\Code\Player.cpp" />
     <ClCompile Include="..\Code\StageScene.cpp" />
     <ClCompile Include="Client.cpp" />
   </ItemGroup>

@@ -76,6 +76,11 @@ Engine::CTexture* Engine::CTexture::Create(LPDIRECT3DDEVICE9 pGraphicDev, const 
 	return pInstance;
 }
 
+Component * CTexture::Clone(void)
+{
+	return new CTexture(*this);
+}
+
 void Engine::CTexture::Free(void)
 {
 	Resources::Free();

@@ -3,62 +3,47 @@
 USING(Engine)
 IMPLEMENT_SINGLETON(Management)
 
-Management::Management()
+Management::Management(void)
+	: m_pScene(nullptr)
 {
 
 }
 
-Management::~Management()
+Management::~Management(void)
 {
 	Free();
 }
 
-void Management::Free(void)
+HRESULT Management::SetUp_Scene(Scene * pScene)
 {
-	for_each(m_pmapScene.begin(), m_pmapScene.end(), CDeleteMap());
-	m_pmapScene.clear();
-}
+	Safe_Release(m_pScene);			// 
 
-HRESULT Management::Ready_Management(LPDIRECT3DDEVICE9 pGraphicDev, const _tchar* pSceneTag, Scene* pScene)
-{
-	//pScene = Find_Scene(pSceneTag);
-
-	//if (nullptr != pScene)		// 이미 키값이 존재하면 Fail...
-	//	return E_FAIL;
-
-	//NULL_CHECK_RETURN(pScene, E_FAIL);
-	m_szSceneTag = pSceneTag;
-	m_pmapScene.emplace(pSceneTag, pScene);
+	m_pScene = pScene;
 
 	return S_OK;
 }
 
-_int Management::Update_Management(const _float & fTimeDelta)
+_int Management::Update_Scene(const _float & fTimeDelta)
 {
-	Scene*		pScene = Find_Scene(m_szSceneTag);
+	if (nullptr == m_pScene)
+		return -1;
 
-	if (nullptr == pScene)
-		return 1;
+	m_pScene->Update_Scene(fTimeDelta);
 
-	pScene->Update_Scene(fTimeDelta);
 	return 0;
 }
 
-void Management::Render_Management()
+void Management::Render_Scene(void)
 {
-	Scene*		pScene = Find_Scene(m_szSceneTag);
-
-	if (nullptr == pScene)
+	if (nullptr == m_pScene)
 		return;
 
-	pScene->Render_Scene();
+	m_pScene->Render_Scene();
 }
 
-Scene * Management::Find_Scene(const _tchar * pSceneTag)
+void Management::Free(void)
 {
-	auto iter = find_if(m_pmapScene.begin(), m_pmapScene.end(), CTag_Finder(pSceneTag));
-
-	if (iter == m_pmapScene.end())		//키값을 못찾았을 경우
-		return nullptr;
-	return iter->second;
+	Safe_Release(m_pScene);
 }
+
+

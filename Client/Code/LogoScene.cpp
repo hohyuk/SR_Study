@@ -2,9 +2,7 @@
 #include "LogoScene.h"
 #include "KeyManager.h"
 #include "StageScene.h"
-LogoScene::LogoScene()
-{
-}
+
 
 LogoScene::LogoScene(LPDIRECT3DDEVICE9 pGraphicDev)
 	:Scene{pGraphicDev}
@@ -13,6 +11,7 @@ LogoScene::LogoScene(LPDIRECT3DDEVICE9 pGraphicDev)
 
 LogoScene::~LogoScene()
 {
+	Scene::Free();
 }
 
 LogoScene * LogoScene::Create(LPDIRECT3DDEVICE9 pGraphicDev)
@@ -27,26 +26,22 @@ LogoScene * LogoScene::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 
 void LogoScene::Free(void)
 {
+	Engine::Scene::Free();
 }
 
 HRESULT LogoScene::Ready_Scene()
 {
-	FAILED_CHECK_RETURN(Engine::Reserve_ContainerSize(Engine::RESOURCE_END), E_FAIL);
+	FAILED_CHECK_RETURN(Ready_Resource(RESOURCE_END), E_FAIL);
 
-	FAILED_CHECK_RETURN(Engine::Ready_Buffer(m_pGraphicDev, Engine::RESOURCE_STATIC, L"Buffer_RcTex", Engine::BUFFER_RCTEX), E_FAIL);
-	FAILED_CHECK_RETURN(Engine::Ready_Texture(m_pGraphicDev, Engine::RESOURCE_STATIC, L"Texture_Logo", Engine::TEX_NORMAL, L"../Bin/Resource/Texture/Logo/Logo.jpg"), E_FAIL);
-
-	CameraPos = D3DXVECTOR3(0.f, 0.f, -3.f);
-	m_Pos = _vec3(0.f, 0.f, 0.f);
 	return S_OK;
 }
 
 _int LogoScene::Update_Scene(const _float & fTimeDelta)
 {
-	if (KeyManager::GetInstance()->DOWN('Q'))
-	{
-		FAILED_CHECK_RETURN(Engine::Ready_Management(m_pGraphicDev, L"Stage", StageScene::Create(m_pGraphicDev)), E_FAIL);
-	}
+	//if (KeyManager::GetInstance()->DOWN('Q'))
+	//{
+	//	FAILED_CHECK_RETURN(Engine::Ready_Management(m_pGraphicDev, L"Stage", StageScene::Create(m_pGraphicDev)), E_FAIL);
+	//}
 
 	if (KeyManager::GetInstance()->Pressing('D'))
 		CameraPos.x += fTimeDelta;
@@ -96,8 +91,6 @@ _int LogoScene::Update_Scene(const _float & fTimeDelta)
 	D3DXMatrixRotationY(&matRotY, D3DXToRadian(m_fYRot));
 	D3DXMatrixTranslation(&matTrans, m_Pos.x, m_Pos.y, m_Pos.z);
 	D3DXMATRIX world = matRotY * matTrans;
-
-
 	m_pGraphicDev->SetTransform(D3DTS_WORLD, &world);
 
 	return 0;
@@ -108,4 +101,14 @@ void LogoScene::Render_Scene()
 	m_pGraphicDev->SetRenderState(D3DRS_LIGHTING, FALSE);
 	Engine::Render_Texture(Engine::RESOURCE_STATIC, L"Texture_Logo", 0);
 	Engine::Render_Buffer(Engine::RESOURCE_STATIC, L"Buffer_RcTex");
+}
+
+HRESULT LogoScene::Ready_Resource(Engine::RESOURCETYPE eType)
+{
+	FAILED_CHECK_RETURN(Engine::Reserve_ContainerSize(eType), E_FAIL);
+
+	FAILED_CHECK_RETURN(Engine::Ready_Buffer(m_pGraphicDev, Engine::RESOURCE_STATIC, L"Buffer_RcTex", Engine::BUFFER_RCTEX), E_FAIL);
+	FAILED_CHECK_RETURN(Engine::Ready_Texture(m_pGraphicDev, Engine::RESOURCE_STATIC, L"Texture_Logo", Engine::TEX_NORMAL, L"../Bin/Resource/Texture/Logo/Logo.jpg"), E_FAIL);
+
+	return S_OK;
 }

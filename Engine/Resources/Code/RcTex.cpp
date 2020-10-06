@@ -75,6 +75,11 @@ Engine::CRcTex* Engine::CRcTex::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 	return pInstance;
 }
 
+Component * CRcTex::Clone(void)
+{
+	return new CRcTex(*this);
+}
+
 void Engine::CRcTex::Free(void)
 {
 	VIBuffer::Free();
