@@ -42,7 +42,7 @@ _int Monster::Update_Object(const _float & fTimeDelta)
 	{
 		Engine::Distance_Dir(m_Dir, m_pPlayer->Get_Pos(), m_Pos);
 
-		if (Distance_Pos(m_pPlayer->Get_Pos(), m_Pos) >= 50)
+		if (Distance_Pos(m_pPlayer->Get_Pos(), m_Pos) >= 0.1)
 		{
 			m_Pos.x += m_Dir.x*fTimeDelta / 2.f;
 			m_Pos.y += m_Dir.y*fTimeDelta / 2.f;
